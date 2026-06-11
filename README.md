@@ -1,30 +1,61 @@
-# Linkscope-Phishing-Checker
-LinkScope is a professional phishing detection and link trust platform for checking suspicious URLs before users open them.
+# LinkScope
 
-The app lets a user paste a URL, run a scan, and receive a trust score, risk score, verdict, technical evidence, and readable explanation. The checker combines URL intelligence with safe live website inspection.
+LinkScope is a professional website safety checker built for everyday users. Paste a website link to receive a clear trust score, plain-language explanation, and practical safety advice.
 
-Product Features
-Clean one-page web experience
-React, Vite, TypeScript, Tailwind CSS frontend
-FastAPI backend with Pydantic schemas
-URL feature extraction from the submitted link
-Live HTTP/HTTPS reachability checks with bounded response reads
-Private-network blocking and redirect-by-redirect target validation
-Redirect, final URL, status code, and content-type inspection
-TLS certificate validation and expiry signal
-HTML form, password field, external form action, script, and link inspection
-Brand impersonation, credential-field, iframe, meta refresh, and risky download signals
-DNS intelligence for A/AAAA, MX, NS, CAA, SPF, and DMARC records
-RDAP domain-age lookup when registration data is available
-Typo-squatting similarity checks against major brand domains
-In-memory scan caching and basic API rate limiting
-Weighted scoring engine with category scores and ranked evidence
-Common security header checks
-ML model loader using Joblib when a trained model exists
-Clearly labelled fallback heuristic when no model file is available
-Executive-style trust report interface
-Responsive polished product-style design
-Tech Stack
-Frontend: React, Vite, TypeScript, Tailwind CSS, Lucide icons
-Backend: Python, FastAPI, Scikit-learn, Pandas, NumPy, Joblib, Pydantic, Uvicorn
-Machine learning: URL feature extractor with Logistic Regression and Random Forest training script
+## Live Website
+
+[Open LinkScope](https://linkscope-phishing-checker.vercel.app)
+
+## Features
+
+- Trust score from 0 to 100
+- Clear safe, caution, or high-risk verdict
+- Plain-language explanations
+- Live website inspection
+- Machine-learning URL analysis
+- Brand impersonation detection
+- HTTPS and certificate checks
+- Redirect and domain record analysis
+- Suspicious form and login detection
+- Responsive desktop and mobile interface
+- No account required
+
+## How It Works
+
+LinkScope combines several layers of analysis:
+
+1. A trained URL model reviews 60 security signals.
+2. The website is checked for redirects, certificates, forms, password fields, and suspicious behavior.
+3. DNS records, domain age, email protection, and brand similarity are reviewed.
+4. The findings are combined into a single trust score and easy-to-read report.
+
+The model was trained using more than 35,000 legitimate and malicious URL examples from generated samples, popular-domain datasets, and public cybersecurity feeds.
+
+## Trust Score
+
+| Score | Result | Recommendation |
+|---|---|---|
+| 75–100 | Looks safe | Continue carefully |
+| 45–74 | Be careful | Verify the website first |
+| 0–44 | High risk | Do not use the website |
+
+## Technology
+
+- React
+- TypeScript
+- Tailwind CSS
+- FastAPI
+- Python
+- Portable logistic URL model
+- Vercel
+
+## Privacy and Security
+
+- No account or sign-in required
+- Forms on scanned websites are never submitted
+- Private and local network addresses are blocked
+- Scans use strict timeouts and redirect limits
+
+## Important Notice
+
+LinkScope provides automated security guidance, not a guarantee that a website is safe. Results may include false positives or false negatives. Always verify unexpected links before entering passwords, payment details, or personal information.
